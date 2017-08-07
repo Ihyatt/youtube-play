@@ -1,0 +1,24 @@
+<div id="form-container">
+  <form>
+    <div class="form-row">
+
+      {{input value=query placeholder="What video would you want to watch..." class="form-control"}}
+    </div>
+    <button {{action 'youTubeSearch'}} type="button" id="search" class="btn btn-default">Search</button>
+  </form>
+</div>
+{{#if errorMessage}}
+  <div class="alert alert-danger">
+    <p>
+      <strong>Search failed:</strong> <code>{{errorMessage}}</code>
+    </p>
+  </div>
+{{/if}}
+
+
+<ul>
+  {{#each videos as |video|}}
+    <li>{{video.snippet.title}}</li>
+    <li><iframe class="video w100" width="640" height="360" src="//www.youtube.com/embed/{{video.id.videoId}}" frameborder="0" allowfullscreen></iframe></li>
+  {{/each}}
+</ul>

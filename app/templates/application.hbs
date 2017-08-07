@@ -1,5 +1,10 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<script src="https://apis.google.com/js/client.js?onload=googleApiClientReady"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script>
+function googleApiClientReady(){
+    gapi.client.setApiKey('AIzaSyCR5In4DZaTP6IEZQ0r1JceuvluJRzQNLE');
+    gapi.client.load("youtube", "v3");
+    }
+</script>
 
 {{outlet}}
